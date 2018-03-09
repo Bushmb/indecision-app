@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import IndesicionApp from './components/IndecisionApp';
+import IndecisionApp from './components/IndecisionApp';
 
-ReactDOM.render(<IndesicionApp />, document.getElementById("app"));
+ReactDOM.render(<IndecisionApp />, document.getElementById("app"));

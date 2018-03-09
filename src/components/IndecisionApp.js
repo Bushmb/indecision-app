@@ -8,7 +8,8 @@ import OptionModal from './OptionModal';
 
 export default class IndesicionApp extends Component {
   state = {
-    options: []
+    options: [],
+    selectedOption: undefined
   };
 
   componentDidMount() {
@@ -50,7 +51,13 @@ export default class IndesicionApp extends Component {
   handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
-    alert(option);
+    this.setState(() => ({
+      selectedOption: option
+    }));
+  }
+
+  handleClearSelectedOption = () => {
+    this.setState(() => ({ selectedOption: undefined}));
   }
 
   handleAddOption = (option) => {
@@ -79,7 +86,10 @@ export default class IndesicionApp extends Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOption={this.handleAddOption} />
-        <OptionModal />
+        <OptionModal 
+          selectedOption={this.state.selectedOption}
+          handleClearSelectedOption={this.handleClearSelectedOption}
+        />
       </div>
     );
   }

@@ -4,6 +4,28 @@ html {
 }
 
 body {
+  background: $color-dark-blue;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
+  font-size: $m-size;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+button:foucs {
+  box-shadow: 0 0 7px $color-purple;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+input[type=text] {
+  outline: none;
+}
+
+input[type=text]:focus {
+  box-shadow: 0 0 7px $color-purple;
 }
